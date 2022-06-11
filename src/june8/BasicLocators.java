@@ -7,12 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import java.nio.file.Files;
 import java.time.Duration;
 
 public class BasicLocators {
 
 
     public static void main(String[] args) throws InterruptedException {
+
+
 
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nuclues\\Documents\\selenium\\browserDrivers\\chromedriver.exe");
@@ -47,6 +50,10 @@ public class BasicLocators {
         String expectedErrorText = "Sorry, your password was incorrect. Please double-check your password";
 
         Assert.assertTrue(driver.getPageSource().contains(expectedErrorText));
+
+
+
+
 
 
 

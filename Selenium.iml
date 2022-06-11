@@ -439,7 +439,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/MySelenium.jar!/" />
+          <root url="jar://$USER_HOME$/Documents/selenium/testng-7.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -448,7 +448,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/selenium/testng-7.5.jar!/" />
+          <root url="jar://$USER_HOME$/Desktop/MySelenium.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
