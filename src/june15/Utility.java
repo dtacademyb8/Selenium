@@ -4,6 +4,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Utility {
 
     public static void jsClick(WebDriver driver, WebElement element){
@@ -26,4 +29,17 @@ public class Utility {
     }
 
 
+
+    public static List<String> getElementsText(WebDriver driver,  List<WebElement> list) {
+
+        List<String> actual = new ArrayList<>();
+
+        for (WebElement element : list) {
+            if (!element.getText().isEmpty()) {
+                actual.add(element.getText());
+            }
+        }
+
+        return  actual;
+    }
 }
