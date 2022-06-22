@@ -1,9 +1,13 @@
 package june15;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,4 +46,18 @@ public class Utility {
 
         return  actual;
     }
+
+    public static void waitForElementToBeVisible(WebDriver driver, int seconds, By by){
+
+         new WebDriverWait(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.visibilityOfElementLocated(by));
+
+    }
+
+    public static void waitForElementToBeClickableOrEnabled(WebDriver driver, int seconds, By by){
+
+        new WebDriverWait(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.elementToBeClickable(by));
+
+    }
+
+
 }
