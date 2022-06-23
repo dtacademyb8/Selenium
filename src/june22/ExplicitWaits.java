@@ -22,7 +22,7 @@ public class ExplicitWaits {
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nuclues\\Documents\\selenium\\browserDrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
         driver.manage().window().maximize();
@@ -36,15 +36,34 @@ public class ExplicitWaits {
         long start =  System.currentTimeMillis();
 //        Thread.sleep(5000);  //static wait
 
-//        WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(5));     // explicit wait
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 
-        Utility.waitForElementToBeVisible(driver, 5, By.id("message"));
+        WebDriverWait wait =  new WebDriverWait(driver, Duration.ofSeconds(5));     // explicit wait
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+//        Utility.waitForElementToBeVisible(driver, 2, By.id("message"));
 
         long end =  System.currentTimeMillis();
 
         System.out.println("The wait time is " + (end - start));
         Assert.assertTrue(driver.findElement(By.id("message")).isDisplayed());
+
+
+
+
+
+        // Implicit   vs     Explicit   waits
+
+        //  -  global     vs      local
+        // -  NoSuchElementException   vs TimeoutException
+        // - No condition   vs ExpectedConditions must be given
+
+
+
+
 
 
 
